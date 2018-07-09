@@ -1,4 +1,4 @@
-package app.rebyte.torigoe
+package app.adbx.torigoe
 
 import org.junit.Test
 

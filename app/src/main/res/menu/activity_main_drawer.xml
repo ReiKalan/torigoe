@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_profile" />
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_list"
+            android:title="@string/menu_list" />
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/ic_bookmark"
+            android:title="@string/menu_bookmark" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_sms"
+            android:title="@string/menu_message" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/menu_favorite" />
+        <item
+            android:id="@+id/nav_moment"
+            android:icon="@drawable/ic_moment"
+            android:title="@string/menu_moment" />
+    </group>
+
+    <item android:title="@string/title_info">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting"
+                android:title="@string/str_setting" />
+            <item
+                android:id="@+id/nav_information"
+                android:icon="@drawable/ic_info"
+                android:title="@string/nav_information" />
+        </menu>
+    </item>
+
+</menu>

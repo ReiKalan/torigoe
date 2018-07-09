@@ -1,3 +1,23 @@
 <resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!--汎用文言-->
     <string name="app_name">torigoe</string>
+    <string name="str_setting">設定</string>
+
+    <!--メニュー-->
+    <string name="menu_profile">プロフィール</string>
+    <string name="menu_list">リスト</string>
+    <string name="menu_bookmark">ブックマーク</string>
+    <string name="menu_message">ダイレクトメッセージ</string>
+    <string name="menu_moment">モーメント</string>
+    <string name="menu_favorite">いいね</string>
+
+    <!--ナビゲーション-->
+    <string name="nav_information">torigoeについて</string>
+    <string name="title_info">基本設定</string>
 </resources>
