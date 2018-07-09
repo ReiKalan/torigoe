@@ -10,6 +10,7 @@
     <string name="str_setting">設定</string>
 
     <!--メニュー-->
+    <string name="menu_timeline">タイムライン</string>
     <string name="menu_profile">プロフィール</string>
     <string name="menu_list">リスト</string>
     <string name="menu_bookmark">ブックマーク</string>

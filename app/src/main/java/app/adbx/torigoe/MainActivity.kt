@@ -3,24 +3,28 @@ package app.adbx.torigoe
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
+import android.support.v4.app.FragmentManager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import app.adbx.torigoe.TimeLineFragment.OnListFragmentInteractionListener
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+import app.adbx.torigoe.twitter.TweetContent
 
+
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, OnListFragmentInteractionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -29,6 +33,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        if (savedInstanceState == null) {
+
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            val timelineFragment = TimeLineFragment
+            fragmentTransaction.add(R.id.frame_layout_main, timelineFragment.newInstance(1))
+            fragmentTransaction.commit()
+        }
+
     }
 
     override fun onBackPressed() {
@@ -58,6 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.nav_timeline -> {
+                supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, TimeLineFragment.newInstance(1)).commit()
+            }
             R.id.nav_profile -> {
 
             }
@@ -87,4 +104,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun onListFragmentInteraction(item: TweetContent.TweetItem?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val a = null
+
+
+        TimeLineFragment.TAG -> Log.i(this.TAG, "onFragmentInteraction with TimeLineFragment")
+    }
+
 }
